@@ -1,4 +1,10 @@
 <template>
+<div  :style="{
+        'background-image': `url(https://cdn.htmlgames.com/TicTacToe/img/menu_back.jpg)`,
+        width: '100%',
+        height: '100%',
+      }">
+
 <div class="container">
 <h2>Tic Tac Toe</h2>
 <div class="play-area">
@@ -16,6 +22,9 @@
 <h2 v-if="winner"> THE WINNER IS {{winner}} 🥳🥳 </h2>
 <h2 v-if="isTie"> GAME IS TIE 😍</h2>
 <button @click="resetBoard()"  v-if="isOver || isTie" >Reset</button>
+</div>
+
+  
 </div>
 </template>
 
@@ -79,6 +88,7 @@ export default {
              {
                    this.isOver=true;
                    this.winner=this.content[firstIndex];
+                   
              }
           }
   
@@ -100,10 +110,10 @@ export default {
               if(this.content[i]=="")
               {
                 return
-              }
-            
+              }   
+                       
              }
-               this.isTie=true;
+            this.isTie=true;   
           }
    
   
@@ -133,7 +143,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #eee;
+   /* background-image: url('https://cdn.htmlgames.com/TicTacToe/img/menu_back.jpg'),  */
+   background-color: rgb(74, 159, 233); 
 }
 
 h1 {
