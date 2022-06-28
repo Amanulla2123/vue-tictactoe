@@ -88,6 +88,8 @@ export default {
              {
                    this.isOver=true;
                    this.winner=this.content[firstIndex];
+                   this.isTie=false;
+                   
                    
              }
           }
@@ -113,7 +115,13 @@ export default {
               }   
                        
              }
-            this.isTie=true;   
+             if(this.winner)
+             {
+                 this.isTie=false; 
+             }
+              else{
+                this.isTie=true; 
+              }
           }
    
   
